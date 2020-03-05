@@ -80,4 +80,17 @@ public class UserRegistrationProblemTest {
         }
     }
 
+    //TEST FOR VALID COUNTRY CODE AND MOBILE NUMBER
+    @Test
+    public void giveMobileNumber_WhenValid_ThenReturn () {
+        boolean mobileNumber = userRegistrationProblem.validateMobileNumber("12 9919819801");
+        Assert.assertTrue(mobileNumber);
+    }
+
+    //TEST FOR INVALID COUNTRY CODE ADN MOBILE NUMBER
+    @Test
+    public void giveMobileNumber_WhenInvalid_ThenReturn () {
+        boolean mobileNumber = userRegistrationProblem.validateMobileNumber("123 99198198011");
+        Assert.assertFalse(mobileNumber);
+    }
 }

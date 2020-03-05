@@ -7,7 +7,8 @@ public class UserRegistrationProblem {
     public String lastNamePattern = "^[A-Z]{1}[a-z]{2,}$";
     //PATTERN OF EMAIL ID
     public String emailIdPattern = "^([a-zA-Z]{3,}([.|_|+|-]?[a-zA-Z0-9]+)?[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.]?[a-zA-Z]{2,3})?)$";
-
+    //PATTERN OF MOBILE NUMBER
+    public String mobileNumberPattern="^[0-9]{2}[ ][0-9]{10}$";
     //MAIN METHOD
     public static void main(String[] args) {
         //WELCOME MESSAGE
@@ -26,5 +27,10 @@ public class UserRegistrationProblem {
     //METHOD TO VALIDATE EMAIL IDS
     public boolean validateEmailId(String email) {
         return (Pattern.matches(emailIdPattern,email));
+    }
+
+    // METHOD TO VALIDATE MOBILE NUMBER
+    public boolean validateMobileNumber(String mobileNumber) {
+        return (Pattern.matches(mobileNumberPattern,mobileNumber));
     }
 }
