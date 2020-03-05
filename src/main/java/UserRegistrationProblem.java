@@ -8,13 +8,14 @@ public class UserRegistrationProblem {
     //PATTERN OF EMAIL ID
     public String emailIdPattern = "^([a-zA-Z]{3,}([.|_|+|-]?[a-zA-Z0-9]+)?[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.]?[a-zA-Z]{2,3})?)$";
     //PATTERN OF MOBILE NUMBER
-    public String mobileNumberPattern="^[0-9]{2}[ ][0-9]{10}$";
+    public String mobileNumberPattern= "^[0-9]{2}[ ][0-9]{10}$";
+    //PATTERN OF PASSWORD AS PER RULE ONE
+    public String passwordRuleOnePattern = "^[a-zA-Z0-9]{8,}";
     //MAIN METHOD
     public static void main(String[] args) {
         //WELCOME MESSAGE
         System.out.println("Welcome To User Registration Problem");
     }
-
     //METHOD TO VALIDATE FIRST NAME
     public boolean validateFirstName(String firstName) {
         return (Pattern.matches(firstNamePattern, firstName));
@@ -32,5 +33,10 @@ public class UserRegistrationProblem {
     // METHOD TO VALIDATE MOBILE NUMBER
     public boolean validateMobileNumber(String mobileNumber) {
         return (Pattern.matches(mobileNumberPattern,mobileNumber));
+    }
+
+    //METHOD TO VALIDATE PASSWORD AS PER RULE ONE
+    public boolean validatePasswordRuleOne(String passwordRuleOne) {
+        return (Pattern.matches(passwordRuleOnePattern,passwordRuleOne));
     }
 }

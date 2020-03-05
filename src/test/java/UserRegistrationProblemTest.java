@@ -93,4 +93,18 @@ public class UserRegistrationProblemTest {
         boolean mobileNumber = userRegistrationProblem.validateMobileNumber("123 99198198011");
         Assert.assertFalse(mobileNumber);
     }
+
+    //TEST FOR VALID PASSWORD AS PER RULE ONE
+    @Test
+    public void givePassword_WhenValid_ThenReturn () {
+        boolean passwordRuleOne = userRegistrationProblem.validatePasswordRuleOne("PAssword123");
+        Assert.assertTrue(passwordRuleOne);
+    }
+
+    //TEST FOR INVALID PASSWORD AS PRE RULE ONE
+    @Test
+    public void givePassword_WhenInvalid_ThenReturn () {
+        boolean passwordRuleOne = userRegistrationProblem.validatePasswordRuleOne("PASS123");
+        Assert.assertFalse(passwordRuleOne);
+    }
 }
