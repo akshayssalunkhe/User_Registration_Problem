@@ -11,6 +11,8 @@ public class UserRegistrationProblem {
     public String mobileNumberPattern= "^[0-9]{2}[ ][0-9]{10}$";
     //PATTERN OF PASSWORD AS PER RULE ONE
     public String passwordRuleOnePattern = "^[a-zA-Z0-9]{8,}";
+    //PATTERN OF PASSWORD AS PER RULE TWO
+    public String passwordRuleTwoPattern = "^(?=.*[A-Z])[A-Za-z]*.{8,}$";
     //MAIN METHOD
     public static void main(String[] args) {
         //WELCOME MESSAGE
@@ -38,5 +40,10 @@ public class UserRegistrationProblem {
     //METHOD TO VALIDATE PASSWORD AS PER RULE ONE
     public boolean validatePasswordRuleOne(String passwordRuleOne) {
         return (Pattern.matches(passwordRuleOnePattern,passwordRuleOne));
+    }
+
+    //METHOD TO VALIDATE PASSWORD AS PER RULE TWO
+    public boolean validatePasswordRuleTwo(String passwordRuleTwo) {
+        return (Pattern.matches(passwordRuleTwoPattern, passwordRuleTwo));
     }
 }

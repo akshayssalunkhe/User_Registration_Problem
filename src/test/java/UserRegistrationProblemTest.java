@@ -107,4 +107,18 @@ public class UserRegistrationProblemTest {
         boolean passwordRuleOne = userRegistrationProblem.validatePasswordRuleOne("PASS123");
         Assert.assertFalse(passwordRuleOne);
     }
+
+    //TEST FOR VALID PASSWORD AS PRE RULE TWO
+    @Test
+    public void givePasswordRuleTwo_WhenValid_ThenReturn () {
+        boolean passwordRuleTwo = userRegistrationProblem.validatePasswordRuleTwo("Password");
+        Assert.assertTrue(passwordRuleTwo);
+    }
+
+    //TEST FOR INVALID PASSWORD AS PER RULE TWO
+    @Test
+    public void givePasswordRuleTwo_WhenInvalid_ThenReturn () {
+        boolean passwordRuleTwo = userRegistrationProblem.validatePasswordRuleTwo("password");
+        Assert.assertFalse(passwordRuleTwo);
+    }
 }
