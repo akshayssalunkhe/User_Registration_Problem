@@ -121,4 +121,18 @@ public class UserRegistrationProblemTest {
         boolean passwordRuleTwo = userRegistrationProblem.validatePasswordRuleTwo("password");
         Assert.assertFalse(passwordRuleTwo);
     }
+
+    //TEST FOR VALID PASSWORD AS PER RULE THREE
+    @Test
+    public void givePasswordRuleThree_WhenValid_ThenReturn () {
+        boolean passwordRuleThree = userRegistrationProblem.validatePasswordRuleThree("Password1");
+        Assert.assertTrue(passwordRuleThree);
+    }
+
+    //TEST FOR INVALID PASSWORD AS PER RULE THREE
+    @Test
+    public void givePasswordRuleThree_WhenInvalid_ThenReturn () {
+        boolean passwordRuleThree = userRegistrationProblem.validatePasswordRuleThree("Passwordabc");
+        Assert.assertFalse(passwordRuleThree);
+    }
 }

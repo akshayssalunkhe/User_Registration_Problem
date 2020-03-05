@@ -13,6 +13,8 @@ public class UserRegistrationProblem {
     public String passwordRuleOnePattern = "^[a-zA-Z0-9]{8,}";
     //PATTERN OF PASSWORD AS PER RULE TWO
     public String passwordRuleTwoPattern = "^(?=.*[A-Z])[A-Za-z]*.{8,}$";
+    //PATTERN OF PASSWORD AS PER RULE THREE
+    public String passwordRuleThreePattern = "((?=.*[A-Z])(?=.*[0-9])[A-z0-9]*.{8,})$";
     //MAIN METHOD
     public static void main(String[] args) {
         //WELCOME MESSAGE
@@ -44,6 +46,10 @@ public class UserRegistrationProblem {
 
     //METHOD TO VALIDATE PASSWORD AS PER RULE TWO
     public boolean validatePasswordRuleTwo(String passwordRuleTwo) {
-        return (Pattern.matches(passwordRuleTwoPattern, passwordRuleTwo));
+        return (Pattern.matches(passwordRuleTwoPattern,passwordRuleTwo));
+    }
+    //METHOD TO VALIDATE PASSWORD AS PER RULE THREE
+    public boolean validatePasswordRuleThree(String passwordRuleThree) {
+        return (Pattern.matches(passwordRuleThreePattern,passwordRuleThree));
     }
 }
