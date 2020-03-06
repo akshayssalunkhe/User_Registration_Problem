@@ -14,12 +14,16 @@ public class UserRegistrationProblem {
     //PATTERN OF PASSWORD AS PER RULE TWO
     public String passwordRuleTwoPattern = "^(?=.*[A-Z])[A-Za-z]*.{8,}$";
     //PATTERN OF PASSWORD AS PER RULE THREE
-    public String passwordRuleThreePattern = "((?=.*[A-Z])(?=.*[0-9])[A-z0-9]*.{8,})$";
+    public String passwordRuleThreePattern = "(^(?=.*[A-Z])(?=.*[0-9])[A-Z0-9]*.{8,})$";
+    //PATTERN OF PASSWORD AS PER RULE FOUR
+    public String passwordRuleFourPattern = "^(?=.{8})(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]*[^A-Za-z0-9][A-Za-z0-9]*$";
+
     //MAIN METHOD
     public static void main(String[] args) {
         //WELCOME MESSAGE
         System.out.println("Welcome To User Registration Problem");
     }
+
     //METHOD TO VALIDATE FIRST NAME
     public boolean validateFirstName(String firstName) {
         return (Pattern.matches(firstNamePattern, firstName));
@@ -29,6 +33,7 @@ public class UserRegistrationProblem {
     public boolean validateLastName(String lastName) {
         return (Pattern.matches(lastNamePattern, lastName));
     }
+
     //METHOD TO VALIDATE EMAIL IDS
     public boolean validateEmailId(String email) {
         return (Pattern.matches(emailIdPattern,email));
@@ -48,8 +53,14 @@ public class UserRegistrationProblem {
     public boolean validatePasswordRuleTwo(String passwordRuleTwo) {
         return (Pattern.matches(passwordRuleTwoPattern,passwordRuleTwo));
     }
+
     //METHOD TO VALIDATE PASSWORD AS PER RULE THREE
     public boolean validatePasswordRuleThree(String passwordRuleThree) {
         return (Pattern.matches(passwordRuleThreePattern,passwordRuleThree));
+    }
+
+    //METHOD TO VALIDATE AS PER RULE FOUR
+    public boolean validatePasswordRuleFour(String passwordRuleFour) {
+        return (Pattern.matches(passwordRuleFourPattern,passwordRuleFour));
     }
 }
